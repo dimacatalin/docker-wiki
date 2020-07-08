@@ -19,6 +19,7 @@ services:
     ports:
       - 3000:3000
   db:
+    user: 70:1000
     image: postgres:9-alpine
     volumes:
       - ./db:/var/lib/postgresql/data
@@ -27,7 +28,7 @@ services:
       POSTGRES_USER: wikijs
       POSTGRES_PASSWORD: wikijsrocks
       POSTGRES_DB: wiki
-    logging:
-      driver: "none"
+    #logging:
+     # driver: "none"
     expose:
       - 5432
